@@ -1,0 +1,93 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Audiowide&family=Black+Ops+One&family=Fredoka+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Permanent+Marker&family=Press+Start+2P&family=Russo+One&family=Silkscreen&display=swap');
+
+body {
+    font-family: Russo One,sans-serif;
+    background-color: white;
+}
+
+.pagina {
+    margin-top: 50px;
+    color: black;
+    text-align: center;
+    
+}
+
+.camisa1 {
+    width: 350px;
+    height: 400px;
+    border-radius: 15px;
+    padding: 10px;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+#lblCamisa1{
+    margin-top:500px;
+}
+
+.container1 {
+    margin-top: 50px;
+    background: linear-gradient(to left, red,black);
+    width: 330px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.Div2 {
+    margin-left: 40%;
+    margin-top: -46%;
+    background: linear-gradient(to left, #F5D338, black);
+    width: 330px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.Div3 {
+    margin-left: 75%;
+    margin-top: -46%;
+    background: linear-gradient(to left, #076CF0, black);
+    width: 330px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.Div4 {
+    margin-left: 75%;
+    margin-top: 10%;
+    background: linear-gradient(to left, #8F2DFF,#F5D338);
+    width: 330px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.Div5 {
+    margin-left: 40%;
+    margin-top: -43%;
+    background: linear-gradient(to left, red,black);
+    width: 330px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.Div6 {
+    margin-left: 1%;
+    margin-top: -43%;
+    background: linear-gradient(to left, blue,black);
+    width: 330px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+
+
+.descricao1 {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+.descricao2 {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
