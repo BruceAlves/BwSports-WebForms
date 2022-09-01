@@ -1,6 +1,7 @@
 ﻿using FUT_Mania.conexao.Produtos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,6 +13,11 @@ namespace FUT_Mania
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            IProdutos produtos = new Produtos();
+            DataTable paganiaEstoque = produtos.BuscarProdutosEstoque();
+
+            dgvEstoqueProdutos.DataSource = paganiaEstoque;
+            dgvEstoqueProdutos.DataBind();
         }
 
         protected void btnCadastrarProdutos_Click(object sender, EventArgs e)

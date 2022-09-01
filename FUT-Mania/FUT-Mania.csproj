@@ -249,10 +249,13 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="ControleEstoque.aspx" />
     <Content Include="CSS\Cliente.css" />
     <Content Include="CSS\InicialPage.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\Produtos.css" />
+    <Content Include="editar.png" />
+    <Content Include="PageLogin.aspx" />
     <Content Include="PaginaInicial.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -266,8 +269,6 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
-    <Content Include="Login.aspx" />
-    <Content Include="PaginaInicial.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -329,6 +330,20 @@
     <Compile Include="cadastrarCliente.aspx.designer.cs">
       <DependentUpon>cadastrarCliente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ControleEstoque.aspx.cs">
+      <DependentUpon>ControleEstoque.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControleEstoque.aspx.designer.cs">
+      <DependentUpon>ControleEstoque.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PageLogin.aspx.cs">
+      <DependentUpon>PageLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PageLogin.aspx.designer.cs">
+      <DependentUpon>PageLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaInicial.aspx.cs">
       <DependentUpon>PaginaInicial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -338,13 +353,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

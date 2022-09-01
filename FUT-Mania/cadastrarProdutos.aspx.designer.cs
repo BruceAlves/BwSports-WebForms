@@ -15,13 +15,13 @@ namespace FUT_Mania
     {
 
         /// <summary>
-        /// lblModelo control.
+        /// dgvEstoqueProdutos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblModelo;
+        protected global::System.Web.UI.WebControls.GridView dgvEstoqueProdutos;
 
         /// <summary>
         /// txtModelo control.
@@ -33,15 +33,6 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.TextBox txtModelo;
 
         /// <summary>
-        /// lblCor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCor;
-
-        /// <summary>
         /// txtCor control.
         /// </summary>
         /// <remarks>
@@ -49,15 +40,6 @@ namespace FUT_Mania
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtCor;
-
-        /// <summary>
-        /// lblTamanhoP control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTamanhoP;
 
         /// <summary>
         /// txtTMP control.
@@ -69,15 +51,6 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.TextBox txtTMP;
 
         /// <summary>
-        /// lblTamanhoM control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTamanhoM;
-
-        /// <summary>
         /// txtTMM control.
         /// </summary>
         /// <remarks>
@@ -85,15 +58,6 @@ namespace FUT_Mania
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTMM;
-
-        /// <summary>
-        /// lblTamanhoG control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTamanhoG;
 
         /// <summary>
         /// txtTMG control.

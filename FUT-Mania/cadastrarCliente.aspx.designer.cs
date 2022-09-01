@@ -33,15 +33,6 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.TextBox TxtEmail;
 
         /// <summary>
-        /// lblCep control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCep;
-
-        /// <summary>
         /// txtCep control.
         /// </summary>
         /// <remarks>
@@ -60,15 +51,6 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.Button pesquisar;
 
         /// <summary>
-        /// lblRua control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRua;
-
-        /// <summary>
         /// txtRua control.
         /// </summary>
         /// <remarks>
@@ -76,15 +58,6 @@ namespace FUT_Mania
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRua;
-
-        /// <summary>
-        /// lblNumero control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumero;
 
         /// <summary>
         /// txtNumero control.
@@ -96,15 +69,6 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.TextBox txtNumero;
 
         /// <summary>
-        /// lblBairro control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBairro;
-
-        /// <summary>
         /// txtbairro control.
         /// </summary>
         /// <remarks>
@@ -112,15 +76,6 @@ namespace FUT_Mania
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtbairro;
-
-        /// <summary>
-        /// lblEstado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEstado;
 
         /// <summary>
         /// txtEstado control.
@@ -132,15 +87,6 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.TextBox txtEstado;
 
         /// <summary>
-        /// lblCidade control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCidade;
-
-        /// <summary>
         /// txtCidade control.
         /// </summary>
         /// <remarks>
@@ -150,13 +96,13 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.TextBox txtCidade;
 
         /// <summary>
-        /// btnLogin control.
+        /// btnCadastrar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
+        protected global::System.Web.UI.WebControls.Button btnCadastrar;
 
         /// <summary>
         /// btnLimpar control.

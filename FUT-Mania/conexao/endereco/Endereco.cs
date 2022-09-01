@@ -23,7 +23,6 @@ namespace FUT_Mania.conexao.endereco
                  values('{cep}', '{rua}', '{bairro}', '{cidade}', '{estado}','{numero}' )
                  SELECT CAST(SCOPE_IDENTITY() as int);";
 
-                sqlConnection = new SqlConnection(conexao);
 
                 SqlCommand sqlCommand = new SqlCommand(InserirEndereco, sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@cep", cep);
@@ -34,11 +33,7 @@ namespace FUT_Mania.conexao.endereco
                 sqlCommand.Parameters.AddWithValue("@numero", numero);
                 sqlConnection.Open();
 
-                idEndereco = sqlCommand.ExecuteNonQuery();
-
-
-
-
+                idEndereco = Convert.ToInt32(sqlCommand.ExecuteScalar());
             }
             catch (Exception)
             {

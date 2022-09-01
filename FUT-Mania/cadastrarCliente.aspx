@@ -4,51 +4,56 @@
 
     <link rel="stylesheet" href="CSS/Cliente.css" />
 
-    <h3>Cadastrar Cliente</h3>
+    <div class="formulario">
+        <h3>Cadastrar Cliente</h3>
 
-    <div class="mb-3">
-        <label id="lblNome" class="form-label">Nome completo:</label>
-        <asp:TextBox ID="txtNome" runat="server" type="text" class="form-control" placeholder="Nome completo"></asp:TextBox>
+        <div class="mb-3">
+            <label id="lblNome" class="form-label">Nome completo:</label>
+            <asp:TextBox ID="txtNome" runat="server" type="text" class="form-control" placeholder="Nome completo"></asp:TextBox>
+        </div>
+        <br />
+        <div class="mb-3">
+            <label id="lblEmail" class="form-label">E-mail:</label>
+            <asp:TextBox ID="TxtEmail" runat="server" type="email" class="form-control" placeholder="Informe seu E-mail"></asp:TextBox>
+        </div>
+        <br />
+        <div class="mb-3">
+            <label id="lblCep" class="form-label">Cep:</label>
+            <asp:TextBox ID="txtCep" runat="server" type="text" class="form-control" placeholder="Informe seu CEP"></asp:TextBox>
+            <asp:Button ID="pesquisar" runat="server" required="true" Text="Ok" OnClick="btnPequisar_Onclick" /><br />
+        </div>
+        <br />
+        <div class="mb-3">
+            <label id="lblRua" class="form-label">Rua:</label>
+            <asp:TextBox Enabled="false" ID="txtRua" runat="server" type="text" class="form-control" placeholder="rua"></asp:TextBox>
+        </div>
+        <br />
+        <div class="mb-3">
+            <label id="lblNumero" class="form-label">Numero:</label>
+            <asp:TextBox  ID="txtNumero" runat="server" type="text" class="form-control" placeholder="numero"></asp:TextBox>
+        </div>
+        <br />
+        <div class="mb-3">
+            <label id="lblBairro" class="form-label">Bairro:</label>
+            <asp:TextBox Enabled="false" ID="txtbairro" runat="server" type="text" class="form-control" placeholder="Bairro"></asp:TextBox>
+        </div>
+        <br />
+        <div class="mb-3">
+            <label id="lblEstado" class="form-label">Estado:</label>
+            <asp:TextBox Enabled="false" ID="txtEstado" runat="server" type="text" class="form-control" placeholder="Estado"></asp:TextBox>
+        </div>
+        <br />
+        <div class="mb-3">
+            <label id="lblCidade" class="form-label">Cidade:</label>
+            <asp:TextBox Enabled="false" ID="txtCidade" runat="server" type="text" class="form-control" placeholder="Cidade"></asp:TextBox>
+        </div>
+        <asp:Button ID="btnCadastrar" runat="server" required="true" Text="Cadastrar" OnClick="btnCadastrar_Onclick" />
+
+        <asp:Button ID="btnLimpar" runat="server" required="true" Text="Limpar" OnClick="btnLimpar_Onclick" />
+
+        <br />
+
     </div>
-    <br />
-    <div class="mb-3">
-        <label id="lblEmail" class="form-label">E-mail:</label>
-        <asp:TextBox ID="TxtEmail" runat="server" type="email" class="form-control" placeholder="Informe seu E-mail"></asp:TextBox>
-    </div>
-    <br />
-    
-
-
-    
-
-    <asp:Label ID="lblCep" runat="server">Cep:</asp:Label>
-    <asp:TextBox ID="txtCep" runat="server"></asp:TextBox>
-    <asp:Button ID="pesquisar" runat="server" required="true" Text="Ok" OnClick="btnPequisar_Onclick" /><br />
-    <br />
-    <asp:Label ID="lblRua" runat="server">Rua:</asp:Label>
-    <asp:TextBox Enabled="false" ID="txtRua" runat="server"></asp:TextBox><br />
-    <br />
-
-    <asp:Label ID="lblNumero" runat="server">Numero:</asp:Label>
-    <asp:TextBox ID="txtNumero" runat="server"></asp:TextBox><br />
-    <br />
-
-    <asp:Label ID="lblBairro" runat="server">Bairro:</asp:Label>
-    <asp:TextBox Enabled="false" ID="txtbairro" runat="server"></asp:TextBox><br />
-    <br />
-
-    <asp:Label ID="lblEstado" runat="server">Estado:</asp:Label>
-    <asp:TextBox Enabled="false" ID="txtEstado" runat="server"></asp:TextBox><br />
-    <br />
-
-    <asp:Label ID="lblCidade" runat="server">Cidade:</asp:Label>
-    <asp:TextBox Enabled="false" ID="txtCidade" runat="server"></asp:TextBox><br />
-    <br />
-
-    <asp:Button ID="btnLogin" runat="server" required="true" Text="Cadastrar" OnClick="btnCadastrar_Onclick" />
-
-    <asp:Button ID="btnLimpar" runat="server" required="true" Text="Limpar" OnClick="btnLimpar_Onclick" />
-
 
 
 

@@ -42,6 +42,7 @@ namespace FUT_Mania.conexao.Cliente
                 sqlConnection.Close();
                 
             }
+
             return idClienteInserido;
         }
     }

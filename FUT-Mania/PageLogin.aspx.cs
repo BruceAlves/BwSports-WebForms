@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace FUT_Mania
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class PageLogin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,7 +17,7 @@ namespace FUT_Mania
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             IUsuario usuario = new Usuario();
-            bool usuarioValido = usuario.ValidarLogin(txtEmail.Text, txtsenha.Text);
+            bool usuarioValido = usuario.ValidarLogin(txtemail.Text, txtsenha.Text);
 
             if (usuarioValido)
             {
@@ -26,14 +26,13 @@ namespace FUT_Mania
             else
             {
                 ScriptManager.RegisterClientScriptBlock(
-               this,
-               this.GetType(),
-               "mensagem",
-               "alert('Error credenciais inválidas')",
-                true);
-                txtEmail.Text = string.Empty;
+              this,
+              this.GetType(),
+              "mensagem",
+              "alert('Erro: Credenciais inválidas!')",
+               true);
                 txtsenha.Text = string.Empty;
-
+                txtemail.Text = string.Empty;
             }
         }
     }
