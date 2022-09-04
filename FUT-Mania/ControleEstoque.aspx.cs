@@ -16,8 +16,8 @@ namespace FUT_Mania
             IProdutos produtos = new Produtos();
             DataTable paganiaEstoque = produtos.BuscarProdutosEstoque();
 
-            dgvEstoque.DataSource = paganiaEstoque;
-            dgvEstoque.DataBind();
+            dgvEstoqueProdutos.DataSource = paganiaEstoque;
+            dgvEstoqueProdutos.DataBind();
         }
 
       

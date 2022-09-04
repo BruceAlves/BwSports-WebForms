@@ -54,6 +54,7 @@
                         <li><a runat="server" href="~/cadastrarProdutos">Cadastrar Produtos</a></li>
                         <li><a runat="server" href="~/cadastrarCliente">Cadastrar Cliente</a></li>
                         <li><a runat="server" href="ControleEstoque" >Controle de estoque</a></li>
+                         <li><a runat="server" href="~/Vendas.aspx" >Realizar uma venda</a></li>
                     </ul>
                 </div>
             </div>

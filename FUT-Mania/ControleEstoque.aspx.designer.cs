@@ -15,12 +15,12 @@ namespace FUT_Mania
     {
 
         /// <summary>
-        /// dgvEstoque control.
+        /// dgvEstoqueProdutos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvEstoque;
+        protected global::System.Web.UI.WebControls.GridView dgvEstoqueProdutos;
     }
 }

@@ -12,5 +12,9 @@ namespace FUT_Mania.conexao.Produtos
         void cadastrarProdutos(string modelo, string cor, string tamanhoP, string tamanhoM, string tamanhoG);
         DataTable BuscarProdutosEstoque();
 
+        void EditarProduto(int id, string cor, string modelo, string tmanhoG, string tamanhoM, string tamanhoP);
+
+        void DeletarProduto(int id);
+
     }
 }

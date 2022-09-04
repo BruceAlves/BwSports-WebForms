@@ -254,7 +254,11 @@
     <Content Include="CSS\InicialPage.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\Produtos.css" />
-    <Content Include="editar.png" />
+    <Content Include="img.icon\Cancel_icon-icons.com_73703.ico" />
+    <Content Include="img.icon\document-add_114467.ico" />
+    <Content Include="img.icon\edit-validated_40458.ico" />
+    <Content Include="img.icon\save_as_icon_152543.ico" />
+    <Content Include="img.icon\trash-can_115312.ico" />
     <Content Include="PageLogin.aspx" />
     <Content Include="PaginaInicial.aspx" />
     <Content Include="favicon.ico" />
@@ -298,6 +302,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="Vendas.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -368,6 +373,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Vendas.aspx.cs">
+      <DependentUpon>Vendas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vendas.aspx.designer.cs">
+      <DependentUpon>Vendas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViaCEP\EnderecoCEP.cs" />
     <Compile Include="ViaCEP\IviaCep.cs" />

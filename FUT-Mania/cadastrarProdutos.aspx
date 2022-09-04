@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Cadastrar Produtos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cadastrarProdutos.aspx.cs" Inherits="FUT_Mania.About" %>
+﻿<%@ Page Title="Cadastrar Produtos" Language="C#"   MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="cadastrarProdutos.aspx.cs" Inherits="FUT_Mania.About"  %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -12,41 +12,51 @@
 
 
         #cadastrobtn {
-            margin-top: -50%;
-            margin-left: 5px;
+            margin-top: -55%;
+            margin-left: -5%;
         }
 
-        h1 {
+        header {
             margin-left: 40%;
-            color: darkgreen
+            color: darkgreen;
+            font-size:40px;
         }
     </style>
 
 
+
+    
     <!--CARREGAMENTO ESTOQUE-->
-    <h1>PRODUTOS</h1>
 
-    <asp:GridView ID="dgvEstoqueProdutos" runat="server" Style="margin-top: 5%; font-size: 20px; padding-left: 10px; text-align: center; margin-left: 1px;" CellPadding="4" ForeColor="#333333" GridLines="None" Height="250px" Width="100%">
-        <AlternatingRowStyle BackColor="White" />
+    <header>PRODUTOS</header>
 
-        <EditRowStyle BackColor="#7C6F57" />
-        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-        <RowStyle BackColor="#E3EAEB" />
-        <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
-        <SortedAscendingCellStyle BackColor="#F8FAFA" />
-        <SortedAscendingHeaderStyle BackColor="#246B61" />
-        <SortedDescendingCellStyle BackColor="#D4DFE1" />
-        <SortedDescendingHeaderStyle BackColor="#15524A" />
 
+     <asp:GridView ID="DgvEstoque" runat="server" CellPadding="4" style="text-align:center; margin-left:-50px; font-size: 20px; margin-top:8%; padding:20px;" ForeColor="Black" Width="110%" Height="249px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2">
+         <Columns>
+             <asp:ButtonField ButtonType="Button" CommandName="Edit" HeaderText="" ShowHeader="True" Text="Editar" />
+             <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="" ShowHeader="True" Text="Deletar" />
+         </Columns>
+         <FooterStyle BackColor="#CCCCCC" />
+         <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+         <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Left" />
+         <RowStyle BackColor="White" />
+         <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+         <SortedAscendingCellStyle BackColor="#F1F1F1" />
+         <SortedAscendingHeaderStyle BackColor="#808080" />
+         <SortedDescendingCellStyle BackColor="#CAC9C9" />
+         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
+      <br />
 
     <!--CADASTRAR PRODUTOS-->
 
     <!-- Button trigger modal -->
     <button type="button" id="cadastrobtn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         Cadastrar novo produto</button>
+    
+
+    <asp:Label  ID="lblErroeMessage" runat="server"  ForeColor="Red" ></asp:Label> 
+    <asp:Label  ID="lblSuccessMessage" runat="server"  ForeColor="Green" ></asp:Label>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -59,27 +69,27 @@
                 <div class="modal-body">
                     <div class="cadastroProduto">
                         <div class="mb-3">
-                            <label id="lblModelo" class="form-label">Modelo:</label>
+                            <label id="lbModelo" class="form-label">Modelo:</label>
                             <asp:TextBox ID="txtModelo" runat="server" type="text" class="form-control" placeholder="Modelo do produto"></asp:TextBox>
                         </div>
                         <br />
                         <div class="mb-3">
-                            <label id="lblCor" class="form-label">Cor:</label>
+                            <label id="lbCor" class="form-label">Cor:</label>
                             <asp:TextBox ID="txtCor" runat="server" type="text" class="form-control" placeholder="Cor do produto"></asp:TextBox>
                         </div>
                         <br />
                         <div class="mb-3">
-                            <label id="lblTamanhoP" class="form-label">Tamanho P:</label>
+                            <label id="lbTamanhoP" class="form-label">Tamanho P:</label>
                             <asp:TextBox ID="txtTMP" runat="server" type="text" class="form-control" placeholder="Quantidade tamanho P"></asp:TextBox>
                         </div>
                         <br />
                         <div class="mb-3">
-                            <label id="lblTamanhoM" class="form-label">Tamanho M:</label>
+                            <label id="lbTamanhoM" class="form-label">Tamanho M:</label>
                             <asp:TextBox ID="txtTMM" runat="server" type="text" class="form-control" placeholder="Quantidade tamanho M"></asp:TextBox>
                         </div>
                         <br />
                         <div class="mb-3">
-                            <label id="lblTamanhoG" class="form-label">Tamanho G:</label>
+                            <label id="lbTamanhoG" class="form-label">Tamanho G:</label>
                             <asp:TextBox ID="txtTMG" runat="server" type="text" class="form-control" placeholder="Quantidade tamanho G"></asp:TextBox>
                         </div>
                         <br />
@@ -95,7 +105,6 @@
         </div>
     </div>
 
-    <!---Editar Produtos-->
 
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -108,4 +117,7 @@
         }
 
     </script>
+
+   
+
 </asp:Content>
