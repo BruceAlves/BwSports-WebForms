@@ -27,7 +27,7 @@
         <div class="mb-3">
             <label id="lblCep" class="form-label">Quantidade:</label>
             <asp:TextBox ID="txtCep" runat="server" type="text" class="form-control" placeholder="quantidade de produtos"></asp:TextBox>
-            <asp:Button ID="pesquisar" runat="server" required="true" Text="Ok" OnClick="btnPequisar_Onclick" /><br />
+            <asp:Button ID="pesquisar" runat="server" required="true" Text="Ok"  /><br />
         </div>
         <br />
         <div class="mb-3">
