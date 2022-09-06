@@ -82,7 +82,7 @@ namespace FUT_Mania.conexao.Produtos
             string queryDelete = $@"delete from produtos
             where id = {id};";
 
-            SqlConnection sqlConnection = new SqlConnection();
+            SqlConnection sqlConnection = new SqlConnection(conexao);
 
             try
             {
@@ -106,7 +106,7 @@ namespace FUT_Mania.conexao.Produtos
             string queryUpdate = $@"UPDATE produtos SET cor='{cor}', modelo='{modelo}', tamanhoG={tmanhoG}, tamanhoM={tamanhoM},tamanhoP={tamanhoP}
             WHERE id={id};";
 
-            SqlConnection sqlConnection = new SqlConnection();
+            SqlConnection sqlConnection = new SqlConnection(conexao);
 
             try
             {

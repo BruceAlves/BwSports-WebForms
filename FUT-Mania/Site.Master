@@ -69,5 +69,13 @@
         </div>
 
     </form>
+    <script>
+        function AbrirModalEditar() {
+            var btnAbrirModal = document.getElementById('btnModalEditar');
+            btnAbrirModal.click();
+            //alert('teste');
+        }
+
+    </script>
 </body>
 </html>

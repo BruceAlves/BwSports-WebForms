@@ -14,6 +14,8 @@ namespace FUT_Mania
 {
     public partial class About : Page
     {
+        public static int idCodigo = 0;
+
         private readonly string conexao = ConfigurationManager.ConnectionStrings["conexaoSQL"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,19 +55,25 @@ namespace FUT_Mania
             {
                 produto.cadastrarProdutos(txtModelo.Text, txtCor.Text, txtTMP.Text, txtTMM.Text, txtTMG.Text);
 
-                ScriptManager.RegisterClientScriptBlock(
-              this,
-              this.GetType(),
-              "mensagem",
-              "alert('Cadastrado com sucesso')",
-               true);
-                CarregarGridView();
+              //  ScriptManager.RegisterClientScriptBlock(
+              //this,
+              //this.GetType(),
+              //"mensagem",
+              //"alert('Cadastrado com sucesso')",
+              // true);
+              //  CarregarGridView();
+
+                
 
                 txtModelo.Text = string.Empty;
                 txtCor.Text = string.Empty;
                 txtTMP.Text = string.Empty;
                 txtTMM.Text = string.Empty;
                 txtTMP.Text = string.Empty;
+
+                CarregarGridView();
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", " ExibirCadastroSucess();", true);
             }
             else
             {
@@ -78,12 +86,70 @@ namespace FUT_Mania
             }
         }
 
-       
+        protected void DgvEstoque_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = DgvEstoque.Rows[index];
+                var idGrid = row.Cells[2].Text;
+                int id = Convert.ToInt32(idGrid);
 
-        
+                string idProduto = row.Cells[2].Text;
+                string corProduto = row.Cells[3].Text;
+                string modeloProduto = row.Cells[4].Text;
+                string tamanhoG = row.Cells[5].Text;
+                string tamanhoM = row.Cells[6].Text;
+                string tamanhoP = row.Cells[7].Text;
 
-      
 
-       
+                idCodigo = Convert.ToInt32(idProduto);
+
+                txtCorEditar.Text = corProduto;
+                txtModeloEditar.Text = modeloProduto;
+                txtTMGEditar.Text = tamanhoG;
+                txtTMMEditar.Text = tamanhoM;
+                txtTMPEditar.Text = tamanhoP;
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "AbrirModalEditar();", true);
+
+            }
+
+            if (e.CommandName == "Deletar")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = DgvEstoque.Rows[index];
+                var idGrid = row.Cells[2].Text;
+                int id = Convert.ToInt32(idGrid);
+
+                string idProduto = row.Cells[2].Text;
+                string corProduto = row.Cells[3].Text;
+                string modeloProduto = row.Cells[4].Text;
+                string tamanhoG = row.Cells[5].Text;
+                string tamanhoM = row.Cells[6].Text;
+                string tamanhoP = row.Cells[7].Text;
+
+                idCodigo = Convert.ToInt32(idProduto);
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "ExibirMensagemDeletar();", true);
+            }
+        }
+
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            IProdutos produtos = new Produtos();
+            produtos.EditarProduto(idCodigo, txtCorEditar.Text, txtModeloEditar.Text, txtTMGEditar.Text, txtTMMEditar.Text, txtTMPEditar.Text);    
+            CarregarGridView();
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "EditadoComSucesso();", true);
+        }
+
+
+        protected void btnDeletar_Click(object sender, EventArgs e)
+        {
+            IProdutos produtos = new Produtos();
+            produtos.DeletarProduto(idCodigo);
+
+            CarregarGridView();
+        }
     }
 }
