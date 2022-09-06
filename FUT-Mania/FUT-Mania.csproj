@@ -254,11 +254,6 @@
     <Content Include="CSS\InicialPage.css" />
     <Content Include="CSS\Login.css" />
     <Content Include="CSS\Produtos.css" />
-    <Content Include="img.icon\Cancel_icon-icons.com_73703.ico" />
-    <Content Include="img.icon\document-add_114467.ico" />
-    <Content Include="img.icon\edit-validated_40458.ico" />
-    <Content Include="img.icon\save_as_icon_152543.ico" />
-    <Content Include="img.icon\trash-can_115312.ico" />
     <Content Include="PageLogin.aspx" />
     <Content Include="PaginaInicial.aspx" />
     <Content Include="favicon.ico" />
