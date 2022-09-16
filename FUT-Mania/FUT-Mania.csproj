@@ -242,14 +242,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="cadastrarProdutos.aspx" />
+    <Content Include="CSS\BwSports_free-file-bola.png" />
+    <Content Include="CSS\BwSports_free-file.png" />
+    <Content Include="CSS\campeonato-brasileiro-serie-a-logo-F86C405B11-seeklogo.com.png" />
+    <Content Include="CSS\kisspng-201617-premier-league-201516-premier-league-5b32564f3ea479.4756515515300255512566.png" />
+    <Content Include="CSS\logo-uefa-champions-league-4096.png" />
+    <Content Include="CSS\pngwing.com %281%29.png" />
+    <Content Include="ExtratoVendas.aspx" />
+    <Content Include="Produtos.aspx" />
     <Content Include="cadastrarCliente.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="ControleEstoque.aspx" />
+    <Content Include="Estoque.aspx" />
     <Content Include="CSS\Cliente.css" />
     <Content Include="CSS\InicialPage.css" />
     <Content Include="CSS\Login.css" />
@@ -297,6 +304,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="teste.aspx" />
     <Content Include="Vendas.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -305,22 +313,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="cadastrarProdutos.aspx.cs">
-      <DependentUpon>cadastrarProdutos.aspx</DependentUpon>
+    <Compile Include="conexao\Usuario\SessaoUsuario.cs" />
+    <Compile Include="ExtratoVendas.aspx.cs">
+      <DependentUpon>ExtratoVendas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="cadastrarProdutos.aspx.designer.cs">
-      <DependentUpon>cadastrarProdutos.aspx</DependentUpon>
+    <Compile Include="ExtratoVendas.aspx.designer.cs">
+      <DependentUpon>ExtratoVendas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Produtos.aspx.cs">
+      <DependentUpon>Produtos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Produtos.aspx.designer.cs">
+      <DependentUpon>Produtos.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="conexao\Cliente\Cliente-Endereco.cs" />
     <Compile Include="conexao\Cliente\Cliente.cs" />
-    <Compile Include="conexao\Cliente\ICliente-Endereco.cs" />
     <Compile Include="conexao\Cliente\ICliente.cs" />
     <Compile Include="conexao\endereco\Endereco.cs" />
     <Compile Include="conexao\endereco\IEndereco.cs" />
     <Compile Include="conexao\Produtos\IProdutos.cs" />
     <Compile Include="conexao\Produtos\Produtos.cs" />
+    <Compile Include="conexao\Produtos\SessaoProduto.cs" />
     <Compile Include="conexao\Usuario\IUsuario.cs" />
     <Compile Include="conexao\Usuario\Usuario.cs" />
     <Compile Include="cadastrarCliente.aspx.cs">
@@ -330,12 +345,12 @@
     <Compile Include="cadastrarCliente.aspx.designer.cs">
       <DependentUpon>cadastrarCliente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ControleEstoque.aspx.cs">
-      <DependentUpon>ControleEstoque.aspx</DependentUpon>
+    <Compile Include="Estoque.aspx.cs">
+      <DependentUpon>Estoque.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ControleEstoque.aspx.designer.cs">
-      <DependentUpon>ControleEstoque.aspx</DependentUpon>
+    <Compile Include="Estoque.aspx.designer.cs">
+      <DependentUpon>Estoque.aspx</DependentUpon>
     </Compile>
     <Compile Include="PageLogin.aspx.cs">
       <DependentUpon>PageLogin.aspx</DependentUpon>
@@ -369,6 +384,13 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="teste.aspx.cs">
+      <DependentUpon>teste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teste.aspx.designer.cs">
+      <DependentUpon>teste.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vendas.aspx.cs">
       <DependentUpon>Vendas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -376,9 +398,6 @@
     <Compile Include="Vendas.aspx.designer.cs">
       <DependentUpon>Vendas.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ViaCEP\EnderecoCEP.cs" />
-    <Compile Include="ViaCEP\IviaCep.cs" />
-    <Compile Include="ViaCEP\ViaCep.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

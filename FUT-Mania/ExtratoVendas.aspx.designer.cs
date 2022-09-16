@@ -11,16 +11,16 @@ namespace FUT_Mania
 {
 
 
-    public partial class ControleEstoque
+    public partial class ExtratoVendas
     {
 
         /// <summary>
-        /// dgvEstoqueProdutos control.
+        /// DgvExtrato control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvEstoqueProdutos;
+        protected global::System.Web.UI.WebControls.GridView DgvExtrato;
     }
 }

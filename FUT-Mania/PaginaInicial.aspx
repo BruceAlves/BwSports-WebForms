@@ -2,57 +2,72 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="CSS/InicialPage.css" />
-    
-        <h2 class="pagina" >🏀 FutFanatics ⚽</h2>
-    
 
-    <h3>Desataques do estoque</h3>
-    <div class="container1">
-        <img class="camisa1" src="https://imgcentauro-a.akamaihd.net/900x900/97338406/camisa-manchester-united-i-22-23-adidas-masculina-img.jpg" />
-        <p class="descricao1">Camisa Manchester United 2022</p>
-        <p class="descricao1">Manga Curta</p>
-        <p class="descricao1">Primier League</p>
-    </div>
+
+    <style>
+        .right carousel-control{
+            background-color:white;
+        }
+    </style>
+
     <br />
     <br />
 
-    <div class="Div2">
-        <img class="camisa1" src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR5GsvxO7DFtMYhunFJgCubIW3CweXzKzVEauWvQhGp7OUZZp-NVoqzFkE7PV6yEfMIEvuwKOTx9VZO5mN-yxiuysjyleMXoareeKh2f7W2BUo8aXRSu_-knw&usqp=CAE" />
-        <p class="descricao2">Borusia Dortmund</p>
-        <p class="descricao2">Manga Curta/Kit Jogo</p>
-        <p class="descricao2">Bundesliga</p>
-    </div>
-    <br />
-    <br />
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
 
-    <div class="Div3">
-        <img class="camisa1" src="https://imgcentauro-a.akamaihd.net/900x900/97221401/camisa-polo-real-madrid-i-22-23-adidas-masculina-img.jpg" />
-        <p class="descricao2">Real Madrid</p>
-        <p class="descricao2">Adidas Masculina</p>
-        <p class="descricao2">La Liga</p>
-    </div>
+        <!-- Wrapper for slides -->
+        <div style="margin-top: 1%; height: 600px; background-color: white; border-radius: 15px;" class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img style="margin-left: 40%; margin-top: 10%;" src="CSS/BwSports_free-file.png" alt="Bw">
+                <div class="carousel-caption">
+                </div>
+            </div>
+            <div class="item">
+                <img style="margin-left: 35%; width:350px; height:350px; margin-top: 8%" src="CSS/logo-uefa-champions-league-4096.png" alt="Bw">
 
-     <div class="Div4">
-        <img class="camisa1" src="https://static.lojanba.com/produtos/regata-nba-los-angeles-lakers-n6-lebron-james-nike-masculina/66/2IC-4672-166/2IC-4672-166_zoom1.jpg?ts=1632823922&ims=544x" />
-        <p class="descricao2"> Los Angeles Lakers</p>
-        <p class="descricao2">Masculina - Amarelo+Roxo</p>
-        <p class="descricao2">NBA</p>
-    </div>
+                <div class="carousel-caption">
+                </div>
+            </div>
 
-    <div class="Div5">
-        <img class="camisa1" src="https://static.lojanba.com/produtos/regata-nba-chicago-bulls-zach-lavine-nike-icon-edition-2020-masculina/56/HZM-4030-056/HZM-4030-056_zoom1.jpg?ts=1630604873&ims=544x" />
-        <p class="descricao2">Chicago Bulls</p>
-        <p class="descricao2">Masculina - Vermelho+Branco</p>
-        <p class="descricao2">NBA</p>
-    </div>
+            <div class="item">
+                <img style="margin-left: 33%;  width:400px; height:350px; margin-top: 10%;" src="CSS/pngwing.com (1).png" alt="Bw">
 
-     <div class="Div6">
-        <img class="camisa1" src="https://static.lojanba.com/produtos/regata-nike-nba-los-angekes-clippers-kawhi-leonard-icon-edition-2020-masculina/58/HZM-4051-058/HZM-4051-058_zoom1.jpg?ts=1592995764&ims=544x" />
-        <p class="descricao2">Clippers </p>
-        <p class="descricao2">Masculina -Azul+Branco</p>
-        <p class="descricao2">NBA</p>
-    </div>
-    
+                <div class="carousel-caption">
+                </div>
+            </div>
 
+             <div class="item">
+                <img style="margin-left: 35%; width:350px; height:350px; margin-top: 10%;" src="CSS/kisspng-201617-premier-league-201516-premier-league-5b32564f3ea479.4756515515300255512566.png" alt="Bw">
+
+                <div class="carousel-caption">
+                </div>
+            </div>
+
+            
+             <div class="item">
+                <img style="margin-left: 40%; margin-top: 10%;" src="CSS/campeonato-brasileiro-serie-a-logo-F86C405B11-seeklogo.com.png" alt="Bw">
+
+                <div class="carousel-caption">
+                </div>
+            </div>
+            <br />
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 
 </asp:Content>

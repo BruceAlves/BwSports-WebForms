@@ -16,7 +16,7 @@ namespace FUT_Mania.conexao.Usuario
         {
             bool loginValido = false;
 
-            string selectLogin = $@"select * from tb_login
+            string selectLogin = $@"select * from usuario
             where email= '{email}' and senha='{senha}';";
 
             SqlConnection sqlConnection = new SqlConnection(conexao);
@@ -28,6 +28,11 @@ namespace FUT_Mania.conexao.Usuario
                 sqlData.Fill(rowUsuario);
                 if (rowUsuario.Rows.Count > 0)
                 {
+                    SessaoUsuario.Id = Convert.ToInt32(rowUsuario.Rows[0]["id"]);
+                    SessaoUsuario.Email = rowUsuario.Rows[0]["email"].ToString();
+                    SessaoUsuario.Nome = rowUsuario.Rows[0]["nome"].ToString();
+                   
+
                     loginValido = true;
                 }
 

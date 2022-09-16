@@ -15,6 +15,15 @@ namespace FUT_Mania
     {
 
         /// <summary>
+        /// DgvClientes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView DgvClientes;
+
+        /// <summary>
         /// txtNome control.
         /// </summary>
         /// <remarks>
@@ -42,15 +51,6 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.TextBox txtCep;
 
         /// <summary>
-        /// pesquisar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button pesquisar;
-
-        /// <summary>
         /// txtRua control.
         /// </summary>
         /// <remarks>
@@ -69,13 +69,13 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.TextBox txtNumero;
 
         /// <summary>
-        /// txtbairro control.
+        /// txtBairro control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtbairro;
+        protected global::System.Web.UI.WebControls.TextBox txtBairro;
 
         /// <summary>
         /// txtEstado control.
@@ -105,12 +105,102 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.Button btnCadastrar;
 
         /// <summary>
-        /// btnLimpar control.
+        /// txtEditarNome control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLimpar;
+        protected global::System.Web.UI.WebControls.TextBox txtEditarNome;
+
+        /// <summary>
+        /// txtEditarEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEditarEmail;
+
+        /// <summary>
+        /// txtEditarCep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEditarCep;
+
+        /// <summary>
+        /// txtEditarRua control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEditarRua;
+
+        /// <summary>
+        /// txtEditarNumero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEditarNumero;
+
+        /// <summary>
+        /// txtEditarBairro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEditarBairro;
+
+        /// <summary>
+        /// txtEditarEstado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEditarEstado;
+
+        /// <summary>
+        /// txtEditarCidade control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEditarCidade;
+
+        /// <summary>
+        /// btnlimpar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnlimpar;
+
+        /// <summary>
+        /// btnEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditar;
+
+        /// <summary>
+        /// btnDeletar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnDeletar;
     }
 }

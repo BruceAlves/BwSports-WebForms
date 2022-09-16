@@ -14,8 +14,7 @@ namespace FUT_Mania
 {
     public partial class About : Page
     {
-        public static int idCodigo = 0;
-
+       
         private readonly string conexao = ConfigurationManager.ConnectionStrings["conexaoSQL"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -25,7 +24,7 @@ namespace FUT_Mania
         void CarregarGridView()
         {
             IProdutos produtos = new Produtos();
-            DataTable paganaEstoque = produtos.BuscarProdutosEstoque();
+            DataTable paganaEstoque = produtos.BuscarProdutos();
 
             if (paganaEstoque.Rows.Count > 0)
             {
@@ -50,41 +49,38 @@ namespace FUT_Mania
         {
             IProdutos produto = new Produtos();
 
+            int tamanhoG = Convert.ToInt32(txtTMG.Text);
+            int tamanhoM = Convert.ToInt32(txtTMM.Text);
+            int tamanhoP = Convert.ToInt32(txtTMP.Text);
+ 
 
-            if (!string.IsNullOrEmpty(txtModelo.Text) && !string.IsNullOrEmpty(txtCor.Text) && !string.IsNullOrEmpty(txtTMP.Text) && !string.IsNullOrEmpty(txtTMM.Text) && !string.IsNullOrEmpty(txtTMG.Text))
+            if (!string.IsNullOrEmpty(txtModelo.Text) && !string.IsNullOrEmpty(txtCor.Text) && !string.IsNullOrEmpty(txtMarca.Text) && !string.IsNullOrEmpty(txtPreco.Text))
             {
-                produto.cadastrarProdutos(txtModelo.Text, txtCor.Text, txtTMP.Text, txtTMM.Text, txtTMG.Text);
 
-              //  ScriptManager.RegisterClientScriptBlock(
-              //this,
-              //this.GetType(),
-              //"mensagem",
-              //"alert('Cadastrado com sucesso')",
-              // true);
-              //  CarregarGridView();
+                produto.cadastrarProdutos(txtModelo.Text, txtCor.Text, txtMarca.Text, txtPreco.Text);
+                produto.inserirEstoque(tamanhoG, tamanhoM, tamanhoP);
 
-                
-
+                txtIDProduto.Text = string.Empty;
                 txtModelo.Text = string.Empty;
                 txtCor.Text = string.Empty;
-                txtTMP.Text = string.Empty;
+                txtMarca.Text = string.Empty;
+                txtPreco.Text = string.Empty;
+                txtTMG.Text = string.Empty;
                 txtTMM.Text = string.Empty;
                 txtTMP.Text = string.Empty;
+               
 
                 CarregarGridView();
 
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", " ExibirCadastroSucess();", true);
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "AlertSucesso();", true);
             }
             else
             {
-                ScriptManager.RegisterClientScriptBlock(
-               this,
-               this.GetType(),
-               "mensagem",
-               "alert('Error')",
-                true);
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "AlertErro();", true);
             }
         }
+
+        public static int produtoID, estoqueID = 0;
 
         protected void DgvEstoque_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -92,24 +88,22 @@ namespace FUT_Mania
             {
                 int index = Convert.ToInt32(e.CommandArgument);
                 GridViewRow row = DgvEstoque.Rows[index];
-                var idGrid = row.Cells[2].Text;
+                var idGrid = row.Cells[3].Text;
                 int id = Convert.ToInt32(idGrid);
 
-                string idProduto = row.Cells[2].Text;
-                string corProduto = row.Cells[3].Text;
-                string modeloProduto = row.Cells[4].Text;
-                string tamanhoG = row.Cells[5].Text;
-                string tamanhoM = row.Cells[6].Text;
-                string tamanhoP = row.Cells[7].Text;
+                string idProduto = row.Cells[3].Text;
+                string corProduto = row.Cells[6].Text;
+                string modeloProduto = row.Cells[5].Text;
+                string marca = row.Cells[4].Text;
+                string preco = row.Cells[7].Text;
 
-
-                idCodigo = Convert.ToInt32(idProduto);
+                produtoID = Convert.ToInt32(idProduto);
 
                 txtCorEditar.Text = corProduto;
                 txtModeloEditar.Text = modeloProduto;
-                txtTMGEditar.Text = tamanhoG;
-                txtTMMEditar.Text = tamanhoM;
-                txtTMPEditar.Text = tamanhoP;
+                txtMarcaEditar.Text = marca;
+                txtPrecoEditar.Text = preco;
+                
 
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "AbrirModalEditar();", true);
 
@@ -122,32 +116,34 @@ namespace FUT_Mania
                 var idGrid = row.Cells[2].Text;
                 int id = Convert.ToInt32(idGrid);
 
-                string idProduto = row.Cells[2].Text;
-                string corProduto = row.Cells[3].Text;
-                string modeloProduto = row.Cells[4].Text;
-                string tamanhoG = row.Cells[5].Text;
-                string tamanhoM = row.Cells[6].Text;
-                string tamanhoP = row.Cells[7].Text;
+                string idEstoque = row.Cells[2].Text;
+                string idproduto = row.Cells[3].Text;
+                string marcaProduto = row.Cells[4].Text;
+                string modeloProduto = row.Cells[5].Text;
+                string preco = row.Cells[7].Text;
+                string cor = row.Cells[6].Text;
 
-                idCodigo = Convert.ToInt32(idProduto);
+                estoqueID = Convert.ToInt32(idEstoque);
+                produtoID = Convert.ToInt32(idproduto);
 
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "ExibirMensagemDeletar();", true);
             }
+
+          
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)
         {
             IProdutos produtos = new Produtos();
-            produtos.EditarProduto(idCodigo, txtCorEditar.Text, txtModeloEditar.Text, txtTMGEditar.Text, txtTMMEditar.Text, txtTMPEditar.Text);    
+            produtos.EditarProduto(produtoID, txtCorEditar.Text, txtModeloEditar.Text, txtMarcaEditar.Text, txtPrecoEditar.Text);    
             CarregarGridView();
-            ClientScript.RegisterStartupScript(this.GetType(), "alert", "EditadoComSucesso();", true);
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "AlertEditadoSucesso();", true);
         }
-
 
         protected void btnDeletar_Click(object sender, EventArgs e)
         {
             IProdutos produtos = new Produtos();
-            produtos.DeletarProduto(idCodigo);
+            produtos.DeletarProduto(produtoID, estoqueID);
 
             CarregarGridView();
         }

@@ -15,6 +15,15 @@ namespace FUT_Mania
     {
 
         /// <summary>
+        /// txtIDProduto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtIDProduto;
+
+        /// <summary>
         /// txtModelo control.
         /// </summary>
         /// <remarks>
@@ -33,13 +42,31 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.TextBox txtCor;
 
         /// <summary>
-        /// txtTMP control.
+        /// txtMarca control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTMP;
+        protected global::System.Web.UI.WebControls.TextBox txtMarca;
+
+        /// <summary>
+        /// txtPreco control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPreco;
+
+        /// <summary>
+        /// txtTMG control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTMG;
 
         /// <summary>
         /// txtTMM control.
@@ -51,13 +78,13 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.TextBox txtTMM;
 
         /// <summary>
-        /// txtTMG control.
+        /// txtTMP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTMG;
+        protected global::System.Web.UI.WebControls.TextBox txtTMP;
 
         /// <summary>
         /// btnCadastrar control.
@@ -87,31 +114,22 @@ namespace FUT_Mania
         protected global::System.Web.UI.WebControls.TextBox txtCorEditar;
 
         /// <summary>
-        /// txtTMPEditar control.
+        /// txtMarcaEditar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTMPEditar;
+        protected global::System.Web.UI.WebControls.TextBox txtMarcaEditar;
 
         /// <summary>
-        /// txtTMMEditar control.
+        /// txtPrecoEditar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTMMEditar;
-
-        /// <summary>
-        /// txtTMGEditar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTMGEditar;
+        protected global::System.Web.UI.WebControls.TextBox txtPrecoEditar;
 
         /// <summary>
         /// btnEditar control.
@@ -139,23 +157,5 @@ namespace FUT_Mania
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView DgvEstoque;
-
-        /// <summary>
-        /// lblErroeMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErroeMessage;
-
-        /// <summary>
-        /// lblSuccessMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSuccessMessage;
     }
 }

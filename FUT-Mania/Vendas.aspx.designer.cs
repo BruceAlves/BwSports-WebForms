@@ -15,57 +15,102 @@ namespace FUT_Mania
     {
 
         /// <summary>
-        /// lblNomeResponsavel control.
+        /// DgvDisponiveisVenda control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNomeResponsavel;
+        protected global::System.Web.UI.WebControls.GridView DgvDisponiveisVenda;
 
         /// <summary>
-        /// txtNome control.
+        /// DPLClientes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNome;
+        protected global::System.Web.UI.WebControls.DropDownList DPLClientes;
 
         /// <summary>
-        /// TxtEmail control.
+        /// txtProdutoVendido control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtProdutoVendido;
 
         /// <summary>
-        /// txtCep control.
+        /// txtValorTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCep;
+        protected global::System.Web.UI.WebControls.TextBox txtValorTotal;
 
         /// <summary>
-        /// pesquisar control.
+        /// txtDataVenda control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button pesquisar;
+        protected global::System.Web.UI.WebControls.TextBox txtDataVenda;
 
         /// <summary>
-        /// txtRua control.
+        /// btnFinalizarVenda control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRua;
+        protected global::System.Web.UI.WebControls.Button btnFinalizarVenda;
+
+        /// <summary>
+        /// txtQtdG control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtQtdG;
+
+        /// <summary>
+        /// txtQtdM control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtQtdM;
+
+        /// <summary>
+        /// txtQtdP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtQtdP;
+
+        /// <summary>
+        /// btnSomarTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSomarTotal;
+
+        /// <summary>
+        /// btnCancelar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

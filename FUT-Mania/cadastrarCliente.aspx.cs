@@ -1,8 +1,8 @@
 ﻿using FUT_Mania.conexao.Cliente;
 using FUT_Mania.conexao.endereco;
-using FUT_Mania.ViaCEP;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,151 +12,124 @@ namespace FUT_Mania
 {
     public partial class Contact : Page
     {
+        public static int clienteid;
+        public static int enderecoid;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            CarregarGridViewClientes();
         }
 
-        void LimparCampos()
+        void CarregarGridViewClientes()
         {
-            txtCep.Text = string.Empty;
-            txtNome.Text = string.Empty;
-            TxtEmail.Text = string.Empty;
-            txtbairro.Text = string.Empty;
-            txtCidade.Text = string.Empty;
-            txtEstado.Text = string.Empty;
-            txtRua.Text = string.Empty;
-            txtNumero.Text = string.Empty;
+            ICliente cliente = new Cliente();
+            DataTable pageClientes = cliente.BuscarTabelaClientes();
+
+            if (pageClientes.Rows.Count > 0)
+            {
+                DgvClientes.DataSource = pageClientes;
+                DgvClientes.DataBind();
+            }
+            else
+            {
+                pageClientes.Rows.Add(pageClientes.NewRow());
+                DgvClientes.DataSource = pageClientes;
+                DgvClientes.DataBind();
+                DgvClientes.Rows[0].Cells.Clear();
+                DgvClientes.Rows[0].Cells.Add(new TableCell());
+                DgvClientes.Rows[0].Cells[0].ColumnSpan = pageClientes.Columns.Count;
+                DgvClientes.Rows[0].Cells[0].Text = "Nenhum dado encontrado...!";
+                DgvClientes.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
+            }
         }
+
     
-
-        protected void btnCadastrar_Onclick(object sender, EventArgs e)
+        protected void DgvClientes_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            IviaCep numeroValido = new ViaCep();
-            var respostaValidacao = numeroValido.validarNumero(txtNumero.Text);
-
-
-            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(TxtEmail.Text) || string.IsNullOrEmpty(txtRua.Text) || string.IsNullOrEmpty(txtNumero.Text) || txtNumero.Text.Contains('a') || string.IsNullOrEmpty(txtbairro.Text) || string.IsNullOrEmpty(txtCep.Text) || string.IsNullOrEmpty(txtEstado.Text) || string.IsNullOrEmpty(txtCidade.Text))
+            if (e.CommandName == "Editar")
             {
-                ScriptManager.RegisterClientScriptBlock(
-               this,
-               this.GetType(),
-               "mensagem",
-               "alert('Erro: Preencha todos os campos!')",
-                true);
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = DgvClientes.Rows[index];
+
+                IEndereco endereco = new Endereco();
+
+                int idCliente = Convert.ToInt32(row.Cells[2].Text);
+                var enderecoCliente = endereco.BuscarEnderecoCliente(idCliente);
+
+                clienteid = idCliente;
+                enderecoid = Convert.ToInt32(enderecoCliente.Rows[0]["Código-Endereço"]);
+
+                txtEditarNome.Text = enderecoCliente.Rows[0]["Nome"].ToString();
+                txtEditarEmail.Text = enderecoCliente.Rows[0]["E-mail"].ToString();
+                txtEditarCep.Text = enderecoCliente.Rows[0]["CEP"].ToString();
+                txtEditarRua.Text = enderecoCliente.Rows[0]["Rua"].ToString();
+                txtEditarNumero.Text = enderecoCliente.Rows[0]["Numero"].ToString();
+                txtEditarCidade.Text = enderecoCliente.Rows[0]["Cidade"].ToString();
+                txtEditarBairro.Text = enderecoCliente.Rows[0]["Bairro"].ToString();
+                txtEditarEstado.Text = enderecoCliente.Rows[0]["Estado"].ToString();
+
+
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "AbrirModalEditar();", true);
+
+            }
+
+            if (e.CommandName == "Deletar")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                GridViewRow row = DgvClientes.Rows[index];
+                var idGrid = row.Cells[2].Text;
+                int id = Convert.ToInt32(idGrid);
+
+                string idCliente = row.Cells[2].Text;
+                string idEndereco = row.Cells[3].Text;
+              
+
+                clienteid = Convert.ToInt32(idCliente);
+                enderecoid = Convert.ToInt32(idEndereco);
+
+               
+
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "ExibirMensagemDeletar();", true);
+            }
+        }
+      
+       
+        protected void btnEditar_Click(object sender, EventArgs e)
+        {
+            ICliente cliente = new Cliente();
+            cliente.EditarCadastroCliente(clienteid, enderecoid, txtEditarNome.Text, txtEditarEmail.Text, txtEditarCep.Text, txtEditarRua.Text, txtEditarBairro.Text, txtEditarNumero.Text, txtEditarCidade.Text, txtEditarEstado.Text);
+            CarregarGridViewClientes();
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "AlertEditadoSucesso();", true);
+        }
+
+        protected void btnDeletar_Click(object sender, EventArgs e)
+        {
+            ICliente cliente = new Cliente();
+            cliente.DeletarCadastroCliente(enderecoid, clienteid);
+            CarregarGridViewClientes();
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "AlertDeletarSucesso();", true);
+        }
+
+        protected void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrEmpty(TxtEmail.Text) || string.IsNullOrEmpty(txtRua.Text) || string.IsNullOrEmpty(txtNumero.Text) || txtNumero.Text.Contains('a') || string.IsNullOrEmpty(txtBairro.Text) || string.IsNullOrEmpty(txtCep.Text) || string.IsNullOrEmpty(txtEstado.Text) || string.IsNullOrEmpty(txtCidade.Text))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "AlertErro();", true);
             }
             else
             {
-                ICliente cliente = new Cliente();
-                int idCliente = cliente.CadastrarCliente(txtNome.Text, TxtEmail.Text);
-
                 IEndereco enderecoCadastrado = new Endereco();
-                int idEndereco = enderecoCadastrado.CadastrarEndereco(txtCep.Text, txtRua.Text, txtbairro.Text, txtNumero.Text, txtCidade.Text, txtEstado.Text);
+                int idEndereco = enderecoCadastrado.CadastrarEndereco(txtCep.Text, txtRua.Text, txtBairro.Text, txtNumero.Text, txtCidade.Text, txtEstado.Text);
 
-                ICliente_Endereco id_cliente_Endereco = new Cliente_Endereco();
-                id_cliente_Endereco.InserirId(idCliente, idEndereco);
 
-                LimparCampos();
+                ICliente cliente = new Cliente();
+                cliente.CadastrarCliente(idEndereco, txtNome.Text, TxtEmail.Text);
+
+                CarregarGridViewClientes();
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "AlertSucesso();", true);
             }
         }
-
-        protected void btnLimpar_Onclick(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
-        protected void btnPequisar_Onclick(object sender, EventArgs e)
-        {
-            int cepLength = txtCep.Text.Length;
-
-            IviaCep validacaoCep = new ViaCep();
-            var respostaCEP = validacaoCep.validarCEP(txtCep.Text);
-
-            if (cepLength != 8)
-            {
-                ScriptManager.RegisterClientScriptBlock(
-               this,
-               this.GetType(),
-               "mensagem",
-               "alert('Erro: CEP Inválido!')",
-                true);
-
-                LimparCampos();
-                txtbairro.Enabled = false;
-                txtCidade.Enabled = false;
-                txtEstado.Enabled = false;
-                txtRua.Enabled = false;
-            }
-            else if (respostaCEP == false)
-            {
-                ScriptManager.RegisterClientScriptBlock(
-               this,
-               this.GetType(),
-               "mensagem",
-               "alert('Erro: CEP Inválido!')",
-                true);
-
-                LimparCampos();
-                txtbairro.Enabled = false;
-                txtCidade.Enabled = false;
-                txtEstado.Enabled = false;
-                txtRua.Enabled = false;
-            }
-            else
-            {
-                IviaCep endereco = new ViaCep();
-                EnderecoCEP respostaCep = endereco.EnderecoCep(txtCep.Text);
-
-
-
-                if (!string.IsNullOrEmpty(respostaCep.Rua))
-                {
-                    txtRua.Text = respostaCep.Rua;
-                    txtRua.Enabled = false;
-                }
-                else
-                {
-                    txtRua.Enabled = true;
-                    txtRua.Text = string.Empty;
-                }
-
-
-                if (!string.IsNullOrEmpty(respostaCep.Bairro))
-                {
-                    txtbairro.Text = respostaCep.Bairro;
-                    txtbairro.Enabled = false;
-                }
-                else
-                {
-                    txtbairro.Enabled = true;
-                    txtbairro.Text = string.Empty;
-                }
-
-
-                if (!string.IsNullOrEmpty(respostaCep.Cidade))
-                {
-                    txtCidade.Text = respostaCep?.Cidade;
-                    txtCidade.Enabled = false;
-                }
-                else
-                {
-                    txtCidade.Enabled = true;
-                    txtCidade.Text = string.Empty;
-                }
-
-
-                if (!string.IsNullOrEmpty(respostaCep.Estado))
-                {
-                    txtEstado.Text = respostaCep.Estado;
-                    txtEstado.Enabled = false;
-                }
-                else
-                {
-                    txtEstado.Enabled = true;
-                    txtEstado.Text = string.Empty;
-                }
-            }
-        }
-
-
     }
 }

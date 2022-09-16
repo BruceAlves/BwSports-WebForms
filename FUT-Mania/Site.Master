@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - BwSports</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -46,15 +46,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                     <spam style="color:white; font-size:medium; position: relative; top: 14px;" runat="server" >Fut Fanatics</spam>
+                  
+                     <spam style="color:white; font-size:medium; position: relative; margin-left:-110%; top: 14px;" runat="server" > <img style="width:40px; height:40px; border-radius:50%; margin-top:-14%; margin-left:-60%; position:absolute;" src="CSS/BwSports_free-file-bola.png" />   BwSposts</spam>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/PaginaInicial">Página inicial</a></li>
-                        <li><a runat="server" href="~/cadastrarProdutos">Cadastrar Produtos</a></li>
-                        <li><a runat="server" href="~/cadastrarCliente">Cadastrar Cliente</a></li>
-                        <li><a runat="server" href="ControleEstoque" >Controle de estoque</a></li>
-                         <li><a runat="server" href="~/Vendas.aspx" >Realizar uma venda</a></li>
+                        <li><a runat="server" href="~/Produtos">Produtos</a></li>
+                        <li><a runat="server" href="~/cadastrarCliente">Clientes</a></li>
+                        <li><a runat="server" href="Estoque" >Estoque</a></li>
+                         <li><a runat="server" href="~/Vendas.aspx" >Vendas</a></li>
+                        <li><a runat="server" href="~/ExtratoVendas.aspx" >Extrato</a></li>
                     </ul>
                 </div>
             </div>
@@ -64,7 +66,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - FutFanatics.com</p>
+                <p>&copy; <%: DateTime.Now.Year %> - BwSports.com</p>
             </footer>
         </div>
 
