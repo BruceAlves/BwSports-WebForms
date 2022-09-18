@@ -14,7 +14,6 @@ namespace FUT_Mania
     {
         public static int clienteid;
         public static int enderecoid;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             CarregarGridViewClientes();
@@ -43,7 +42,6 @@ namespace FUT_Mania
             }
         }
 
-    
         protected void DgvClientes_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Editar")
@@ -68,8 +66,6 @@ namespace FUT_Mania
                 txtEditarBairro.Text = enderecoCliente.Rows[0]["Bairro"].ToString();
                 txtEditarEstado.Text = enderecoCliente.Rows[0]["Estado"].ToString();
 
-
-
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "AbrirModalEditar();", true);
 
             }
@@ -87,10 +83,7 @@ namespace FUT_Mania
 
                 clienteid = Convert.ToInt32(idCliente);
                 enderecoid = Convert.ToInt32(idEndereco);
-
-               
-
-
+             
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "ExibirMensagemDeletar();", true);
             }
         }

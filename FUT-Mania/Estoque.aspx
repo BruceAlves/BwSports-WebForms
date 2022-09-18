@@ -10,7 +10,6 @@
         }
 
         h1 {
-
             color: darkgreen;
             text-align: center;
         }
@@ -89,14 +88,14 @@
     <!-- Button trigger modal Editar-->
     <button type="button" id="btnModalEditar" style="display: none;" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalEditar">
         Editar produto</button>
-      <!-- Button trigger modal mensagem sucesso-->
+    <!-- Button trigger modal mensagem sucesso-->
     <button type="button" id="btnModalMessageSucesso" style="display: none;" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#AbrirMensageSucess">
         mensagemSucesso</button>
 
     <h1>CONTROLE DE ESTOQUE</h1>
 
 
-    <asp:GridView ID="dgvEstoqueProdutos" runat="server" CellPadding="4" Style=" text-align:center; margin-left: -6%; margin-top: 4%; padding: 20px;" ForeColor="Black" Width="113%" Height="50px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2" OnRowCommand="dgvEstoqueProdutos_RowCommand">
+    <asp:GridView ID="dgvEstoqueProdutos" runat="server" CellPadding="4" Style="text-align: center; margin-left: -6%; margin-top: 4%; padding: 20px;" ForeColor="Black" Width="113%" Height="50px" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellSpacing="2" OnRowCommand="dgvEstoqueProdutos_RowCommand">
         <Columns>
             <asp:ButtonField ButtonType="Button" CommandName="Editar" ShowHeader="True" Text="Editar" />
         </Columns>
@@ -151,10 +150,6 @@
 
     </script>
 
-    
-
-
-
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
 </asp:Content>

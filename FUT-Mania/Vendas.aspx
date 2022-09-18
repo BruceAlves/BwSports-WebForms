@@ -9,37 +9,28 @@
         * {
             font-family: Russo One,sans-serif;
         }
-
         .meuFormulario {
-            margin-top:-1%;
+            margin-top: -1%;
             margin-left: 75%;
             position: relative;
         }
-
         header {
-              margin-top:-28%;
-             margin-left: 70%;
+            margin-top: -28%;
+            margin-left: 70%;
             text-align: center;
             font-size: 30px;
         }
-
-
-
-        .meuFormulario2{
-             margin-top:5%;
+        .meuFormulario2 {
+            margin-top: 5%;
             margin-left: 30%;
             position: relative;
         }
-
-
         h2 {
             margin-left: -7%;
             margin-top: 50px;
         }
-
-        h1{
+        h1 {
             margin-left: -5%;
-            
         }
     </style>
 
@@ -60,48 +51,52 @@
         <SortedDescendingHeaderStyle BackColor="#383838" />
     </asp:GridView>
 
-    <header>Realiza uma venda</header><br />
-                <div class="meuFormulario">
+    <header>Realiza uma venda</header>
+    <br />
+    <div class="meuFormulario">
 
-                    <div>
-                        <label>Vender para cliente</label><br />
-                        <asp:DropDownList ID="DPLClientes" runat="server" Height="35px" Width="300px">
-                            <asp:ListItem Selected="True"></asp:ListItem>
-                        </asp:DropDownList>
-                    </div>
-                    <br />
+        <div>
+            <label>Vender para cliente</label><br />
+            <asp:DropDownList ID="DPLClientes" runat="server" Height="35px" Width="300px">
+                <asp:ListItem Selected="True"></asp:ListItem>
+            </asp:DropDownList>
+        </div>
+        <br />
 
-                    <div class="mb-3">
-                        <label id="lblProduto" class="form-label">Produto vendido:</label>
-                        <asp:TextBox ID="txtProdutoVendido" Enabled="false" runat="server" type="text" class="form-control" placeholder="Produto"></asp:TextBox>
-                    </div>
-                    <br />
-                 
-                    <div class="mb-3">
-                        <label id="lblNome" class="form-label">Valor total:</label>
-                        <asp:TextBox ID="txtValorTotal" runat="server" Enabled="false" type="text" class="form-control" placeholder="Valor total da compra"></asp:TextBox>
-                    </div>
-                    <br />
+        <div class="mb-3">
+            <label id="lblProduto" class="form-label">Produto vendido:</label>
+            <asp:TextBox ID="txtProdutoVendido" Enabled="false" runat="server" type="text" class="form-control" placeholder="Produto"></asp:TextBox>
+        </div>
+        <br />
 
-                    <div class="mb-3">
-                        <label id="lblCep" class="form-label">Data:</label>
-                        <asp:TextBox ID="txtDataVenda" Enabled="false" runat="server" type="text" class="form-control" placeholder="Data da venda"></asp:TextBox>
-                    </div>
-                    <br />
-                   
-                    <asp:Button ID="btnFinalizarVenda" class="btn btn-primary" runat="server" required="true" Text="Finalizar venda" OnClick="btnFinalizarVenda_Click1" />
+        <div class="mb-3">
+            <label id="lblNome" class="form-label">Valor total:</label>
+            <asp:TextBox ID="txtValorTotal" runat="server" Enabled="false" type="text" class="form-control" placeholder="Valor total da compra"></asp:TextBox>
+        </div>
+        <br />
 
-                </div>
+        <div class="mb-3">
+            <label id="lblCep" class="form-label">Data:</label>
+            <asp:TextBox ID="txtDataVenda" Enabled="false" runat="server" type="text" class="form-control" placeholder="Data da venda"></asp:TextBox>
+        </div>
+        <br />
+
+        <asp:Button ID="btnFinalizarVenda" class="btn btn-primary" runat="server" required="true" Text="Finalizar venda" OnClick="btnFinalizarVenda_Click1" />
+
+    </div>
 
 
 
     <!--Fim Modal venda-->
     <div class="modal fade" id="AbrirModalVenda" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
-            <div class="modal-content"><br /><br />
-                <div class="meuFormulario2" >
+            <div class="modal-content">
+                <br />
+                <br />
+                <div class="meuFormulario2">
 
-                    <h1>Calcular valor</h1><br />
+                    <h1>Calcular valor</h1>
+                    <br />
                     <div class="mb-3">
                         <label id="lblQtdG" class="form-label">G:</label>
                         <asp:TextBox ID="txtQtdG" runat="server" type="number" class="form-control" placeholder="Quantidade total de itens"></asp:TextBox><br />
@@ -119,10 +114,10 @@
                         <label id="lblQtdP" class="form-label">P:</label>
                         <asp:TextBox ID="txtQtdP" runat="server" type="number" class="form-control" placeholder="Quantidade total de itens"></asp:TextBox><br />
                         <asp:Button ID="btnSomarTotal" class="btn btn-primary" runat="server" required="true" Text="Calcular valor" OnClick="btnSomarTotal_Click" />
-                         <asp:Button ID="btnCancelar" class="btn btn-default" runat="server" required="true" Text="Cancelar" OnClick="btnCancelar_Click" />
+                        <asp:Button ID="btnCancelar" class="btn btn-default" runat="server" required="true" Text="Cancelar" OnClick="btnCancelar_Click" />
                     </div>
                     <br />
-                </div>     
+                </div>
                 <br />
                 <br />
 
@@ -137,7 +132,6 @@
     <!-- Button trigger modal venda-->
     <button type="button" id="btnModalVenda" style="display: none;" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#AbrirModalVenda">
         mensagemSucesso</button>
-
 
     <script>
         function AlertSucesso() {

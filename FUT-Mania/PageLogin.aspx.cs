@@ -19,20 +19,13 @@ namespace FUT_Mania
             IUsuario usuario = new Usuario();
             bool usuarioValido = usuario.ValidarLogin(txtemail.Text, txtsenha.Text);
 
-            
-
             if (usuarioValido)
             {
                 Response.Redirect("https://localhost:44301/PaginaInicial");
             }
             else
             {
-                ScriptManager.RegisterClientScriptBlock(
-              this,
-              this.GetType(),
-              "mensagem",
-              "alert('Erro: Credenciais inválidas!')",
-               true);
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "AlertErro();", true);
                 txtsenha.Text = string.Empty;
                 txtemail.Text = string.Empty;
             }

@@ -44,7 +44,6 @@ namespace FUT_Mania
             }
         }
 
-
         protected void btnCadastrarProdutos_Click(object sender, EventArgs e)
         {
             IProdutos produto = new Produtos();
@@ -53,10 +52,8 @@ namespace FUT_Mania
             int tamanhoM = Convert.ToInt32(txtTMM.Text);
             int tamanhoP = Convert.ToInt32(txtTMP.Text);
  
-
             if (!string.IsNullOrEmpty(txtModelo.Text) && !string.IsNullOrEmpty(txtCor.Text) && !string.IsNullOrEmpty(txtMarca.Text) && !string.IsNullOrEmpty(txtPreco.Text))
             {
-
                 produto.cadastrarProdutos(txtModelo.Text, txtCor.Text, txtMarca.Text, txtPreco.Text);
                 produto.inserirEstoque(tamanhoG, tamanhoM, tamanhoP);
 
@@ -104,9 +101,7 @@ namespace FUT_Mania
                 txtMarcaEditar.Text = marca;
                 txtPrecoEditar.Text = preco;
                 
-
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "AbrirModalEditar();", true);
-
             }
 
             if (e.CommandName == "Deletar")
@@ -127,9 +122,7 @@ namespace FUT_Mania
                 produtoID = Convert.ToInt32(idproduto);
 
                 ClientScript.RegisterStartupScript(this.GetType(), "alert", "ExibirMensagemDeletar();", true);
-            }
-
-          
+            }         
         }
 
         protected void btnEditar_Click(object sender, EventArgs e)

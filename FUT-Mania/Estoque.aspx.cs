@@ -38,6 +38,7 @@ namespace FUT_Mania
                 dgvEstoqueProdutos.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
             }
         }
+
         public static int estoqueID = 0;
         protected void dgvEstoqueProdutos_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -71,7 +72,7 @@ namespace FUT_Mania
             int TMP = Convert.ToInt32(txtEditarTMP.Text);
 
             IProdutos produtos = new Produtos();
-            produtos.EditarEstoque(estoqueID, TMG, TMM, TMP);
+            produtos.EditarEstoque (estoqueID, TMG, TMM, TMP);
             CarregarGridView();
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "AlertSucesso();", true);
         }

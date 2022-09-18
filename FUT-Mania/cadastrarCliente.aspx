@@ -5,25 +5,23 @@
     <link rel="stylesheet" href="CSS/Cliente.css" />
 
     <style>
-         #cadastrobtn {
+        #cadastrobtn {
             margin-top: 1%;
             margin-left: -6%;
-            position:relative;
+            position: relative;
         }
 
-         header{
-             text-align:center;
-             color:darkgreen;
-             font-size:40px;          
-         }
- 
+        header {
+            text-align: center;
+            color: darkgreen;
+            font-size: 40px;
+        }
     </style>
-       
+
     <header>Clientes cadastrados</header>
 
     <asp:GridView ID="DgvClientes" runat="server" Style="margin-left: -10%; text-align: center; margin-top: 4%"
-        
-        BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="120%" OnRowCommand="DgvClientes_RowCommand" >
+        BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" ForeColor="Black" Width="120%" OnRowCommand="DgvClientes_RowCommand">
         <Columns>
             <asp:ButtonField ButtonType="Button" CommandName="Editar" Text="Editar" />
             <asp:ButtonField ButtonType="Button" CommandName="Deletar" Text="Deletar" />
@@ -63,13 +61,13 @@
                         <br />
                         <div class="mb-3">
                             <label id="lblCep" class="form-label">Cep:</label>
-                            <asp:TextBox  ID="txtCep" runat="server" type="text" class="cep" placeholder="Informe seu CEP"></asp:TextBox>
-                           
+                            <asp:TextBox ID="txtCep" runat="server" type="text" class="cep" placeholder="Informe seu CEP"></asp:TextBox>
+
                         </div>
                         <br />
                         <div class="mb-3">
                             <label id="lblRua" class="form-label">Rua:</label>
-                            <asp:TextBox   ID="txtRua" runat="server" type="text" class="rua" placeholder="rua"></asp:TextBox>
+                            <asp:TextBox ID="txtRua" runat="server" type="text" class="rua" placeholder="rua"></asp:TextBox>
                         </div>
                         <br />
                         <div class="mb-3">
@@ -79,21 +77,21 @@
                         <br />
                         <div class="mb-3">
                             <label id="lblBairro" class="form-label">Bairro:</label>
-                            <asp:TextBox   ID="txtBairro" runat="server" type="text" class="bairro" placeholder="Bairro"></asp:TextBox>
+                            <asp:TextBox ID="txtBairro" runat="server" type="text" class="bairro" placeholder="Bairro"></asp:TextBox>
                         </div>
                         <br />
                         <div class="mb-3">
                             <label id="lblEstado" class="form-label">Estado:</label>
-                            <asp:TextBox   ID="txtEstado" runat="server" type="text" class="estado" placeholder="Estado"></asp:TextBox>
+                            <asp:TextBox ID="txtEstado" runat="server" type="text" class="estado" placeholder="Estado"></asp:TextBox>
                         </div>
                         <br />
                         <div class="mb-3">
                             <label id="lblCidade" class="form-label">Cidade:</label>
-                            <asp:TextBox  ID="txtCidade" runat="server" type="text" class="cidade" placeholder="Cidade"></asp:TextBox>
+                            <asp:TextBox ID="txtCidade" runat="server" type="text" class="cidade" placeholder="Cidade"></asp:TextBox>
                         </div>
                         <%--<asp:Button ID="btnCadastrar" runat="server" required="true" Text="Cadastrar" OnClick="btnCadastrar_Onclick" />--%>
 
-                       <%-- <asp:Button ID="btnLimpar" runat="server" required="true" Text="Limpar" OnClick="btnLimpar_Onclick" />--%>
+                        <%-- <asp:Button ID="btnLimpar" runat="server" required="true" Text="Limpar" OnClick="btnLimpar_Onclick" />--%>
 
                         <br />
 
@@ -123,7 +121,7 @@
                     <div class="formulario">
                         <div class="mb-3">
                             <label id="lblNomeEditar" class="form-label">Nome completo:</label>
-                            <asp:TextBox ID="txtEditarNome" runat="server" type="text" class="form-control" placeholder="Nome completo" required="true" ></asp:TextBox>
+                            <asp:TextBox ID="txtEditarNome" runat="server" type="text" class="form-control" placeholder="Nome completo" required="true"></asp:TextBox>
                         </div>
                         <br />
                         <div class="mb-3">
@@ -133,13 +131,13 @@
                         <br />
                         <div class="mb-3">
                             <label id="lblCepEditar" class="form-label">Cep:</label>
-                            <asp:TextBox  ID="txtEditarCep" runat="server" type="text" class="cep" placeholder="Informe seu CEP" required="true"></asp:TextBox>
-                           
+                            <asp:TextBox ID="txtEditarCep" runat="server" type="text" class="cep" placeholder="Informe seu CEP" required="true"></asp:TextBox>
+
                         </div>
                         <br />
                         <div class="mb-3">
                             <label id="lblRuaEditar" class="form-label">Rua:</label>
-                            <asp:TextBox   ID="txtEditarRua" runat="server" type="text" class="rua" placeholder="rua" required="true"></asp:TextBox>
+                            <asp:TextBox ID="txtEditarRua" runat="server" type="text" class="rua" placeholder="rua" required="true"></asp:TextBox>
                         </div>
                         <br />
                         <div class="mb-3">
@@ -149,20 +147,20 @@
                         <br />
                         <div class="mb-3">
                             <label id="lblBairroEditar" class="form-label">Bairro:</label>
-                            <asp:TextBox   ID="txtEditarBairro" runat="server" type="text" class="bairro" placeholder="Bairro" required="true"></asp:TextBox>
+                            <asp:TextBox ID="txtEditarBairro" runat="server" type="text" class="bairro" placeholder="Bairro" required="true"></asp:TextBox>
                         </div>
                         <br />
                         <div class="mb-3">
                             <label id="lblEstadoEditar" class="form-label">Estado:</label>
-                            <asp:TextBox   ID="txtEditarEstado" runat="server" type="text" class="estado" placeholder="Estado" required="true"></asp:TextBox>
+                            <asp:TextBox ID="txtEditarEstado" runat="server" type="text" class="estado" placeholder="Estado" required="true"></asp:TextBox>
                         </div>
                         <br />
                         <div class="mb-3">
                             <label id="lblCidadeEditar" class="form-label">Cidade:</label>
-                            <asp:TextBox  ID="txtEditarCidade" runat="server" type="text" class="cidade" placeholder="Cidade" required="true"></asp:TextBox>
-                        </div>                        
+                            <asp:TextBox ID="txtEditarCidade" runat="server" type="text" class="cidade" placeholder="Cidade" required="true"></asp:TextBox>
+                        </div>
 
-                        <asp:button id="btnlimpar" runat="server" required="true" text="limpar"  />
+                        <asp:Button ID="btnlimpar" runat="server" required="true" Text="limpar" />
 
                         <br />
 
@@ -178,7 +176,7 @@
     </div>
     <!-- Fim Modal Editar -->
 
-      <!---Modal deletando com sucesso--->
+    <!---Modal deletando com sucesso--->
     <div class="modal fade" id="AbrirMensageDelete" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -198,7 +196,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
-                    <asp:Button ID="btnDeletar" class="btn btn-primary" runat="server"  Text="Deletar" OnClick="btnDeletar_Click" />
+                    <asp:Button ID="btnDeletar" class="btn btn-primary" runat="server" Text="Deletar" OnClick="btnDeletar_Click" />
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -214,7 +212,7 @@
     <button type="button" id="cadastrobtn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
         Novo cliente</button>
 
-     <!-- Button trigger modal Editar-->
+    <!-- Button trigger modal Editar-->
     <button type="button" id="btnModalEditar" style="display: none;" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalEditar">
         Editar produto</button>
     <!-- Button trigger modal mensagem Deletar-->
@@ -223,33 +221,31 @@
 
 
 
-     <script type="text/javascript">
-      
+    <script type="text/javascript">
+
+        function AbrirModalEditar() {
+            var btnAbrirModal = document.getElementById('btnModalEditar');
+            btnAbrirModal.click();
+
+        }
+
+        function EditadoComSucesso() {
+            var AbrirMensageSucess = document.getElementById('btnModalMessageSucesso');
+            btnModalMessageSucesso.click();
+        }
+
+        function ExibirMensagemDeletar() {
+            var btnModalMessageDeletar = document.getElementById('btnModalMessageDeletar');
+            btnModalMessageDeletar.click();
+        }
+
+        function ExibirCadastroSucess() {
+            var btnCadastrar = document.getElementById('btnModalMessageCadastro');
+            btnModalMessageCadastro.click();
+        }
 
 
-         function AbrirModalEditar() {
-             var btnAbrirModal = document.getElementById('btnModalEditar');
-             btnAbrirModal.click();
-
-         }
-
-         function EditadoComSucesso() {
-             var AbrirMensageSucess = document.getElementById('btnModalMessageSucesso');
-             btnModalMessageSucesso.click();
-         }
-
-         function ExibirMensagemDeletar() {
-             var btnModalMessageDeletar = document.getElementById('btnModalMessageDeletar');
-             btnModalMessageDeletar.click();
-         }
-
-         function ExibirCadastroSucess() {
-             var btnCadastrar = document.getElementById('btnModalMessageCadastro');
-             btnModalMessageCadastro.click();
-         }
-
-
-     </script>
+    </script>
 
     <script>
 
@@ -297,7 +293,6 @@
 
         document.getElementById('MainContent_txtCep')
             .addEventListener('focusout', pesquisarCep);
-
 
         const limparFormularioEditar = () => {
             document.getElementById('MainContent_txtEditarRua').value = '';
@@ -387,8 +382,8 @@
     </script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-        
+
+
 
 
 </asp:Content>

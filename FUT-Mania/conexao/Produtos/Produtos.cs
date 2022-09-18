@@ -18,12 +18,11 @@ namespace FUT_Mania.conexao.Produtos
         {
             string SelectProdutos = $@"	        
             select estoque.id as 'Código-Estoque', produto.id as 'Código-Produto', produto.marca As 'Marca', produto.modelo As 'Modelo', produto.cor As 'Cor', produto.preco As 'Preço'  from estoque 
-             inner join produto
-             ON estoque.id_produto = produto.id;";
+            inner join produto
+            ON estoque.id_produto = produto.id;";
 
             SqlConnection sqlConnection = new SqlConnection(conexao);
             DataTable pageProdutos = new DataTable();
-
 
             try
             {
@@ -46,13 +45,12 @@ namespace FUT_Mania.conexao.Produtos
         public DataTable BuscarEstoque()
         {
             string SelectEstoque = $@"	        
-             select estoque.id as 'Código-Estoque', produto.id as 'Código-Produto', produto.marca As 'Marca', produto.modelo As 'Modelo', produto.preco As 'Preço', produto.cor As 'Cor', estoque.quantidade_tamanho_G As 'Qtd TamanhoG' , estoque.quantidade_tamanho_M as 'Qtd TamanhoM', estoque.quantidade_tamanho_P as 'Qtd TamanhoP' from estoque 
-             inner join produto
-             ON estoque.id_produto = produto.id;";
+            select estoque.id as 'Código-Estoque', produto.id as 'Código-Produto', produto.marca As 'Marca', produto.modelo As 'Modelo', produto.preco As 'Preço', produto.cor As 'Cor', estoque.quantidade_tamanho_G As 'Qtd TamanhoG' , estoque.quantidade_tamanho_M as 'Qtd TamanhoM', estoque.quantidade_tamanho_P as 'Qtd TamanhoP' from estoque 
+            inner join produto
+            ON estoque.id_produto = produto.id;";
 
             SqlConnection sqlConnection = new SqlConnection(conexao);
             DataTable pageEstoque = new DataTable();
-
 
             try
             {
@@ -71,10 +69,7 @@ namespace FUT_Mania.conexao.Produtos
 
             return pageEstoque;
         }
-
-
-
-        //DELETE
+        
         public void DeletarProduto(int idProduto, int idEstoque)
         {
             string queryDelete = $@"delete  from estoque
@@ -99,8 +94,7 @@ namespace FUT_Mania.conexao.Produtos
                 sqlConnection.Close();
             }
         }
-
-        //UPDATE PRODUTO
+      
         public void EditarProduto(int id, string cor, string modelo, string marca, string preco)
         {
             string queryUpdate = $@"UPDATE produto SET cor='{cor}', modelo='{modelo}', marca='{marca}', preco='{preco}'
@@ -123,10 +117,10 @@ namespace FUT_Mania.conexao.Produtos
                 sqlConnection.Close();
             }
         }
-        //UPADATE ESTOQUE
+        
         public void EditarEstoque(int idEstoque, int tamanhoG, int tamanhoM, int tamanoP)
         {
-            string queryUpdate = $@"UPDATE estoque SET quantidade_tamanho_G= {tamanhoG}, quantidade_tamanho_M={tamanhoM}, quantidade_tamanho_P={tamanoP}
+            string queryUpdate = $@"UPDATE estoque SET quantidade_tamanho_G= {tamanhoG}, quantidade_tamanho_M ={tamanhoM}, quantidade_tamanho_P ={tamanoP}
             WHERE id={idEstoque};";
 
             SqlConnection sqlConnection = new SqlConnection(conexao);
@@ -165,9 +159,7 @@ namespace FUT_Mania.conexao.Produtos
                 cmd.Parameters.AddWithValue("@marca", marca);
                 cmd.Parameters.AddWithValue("@preco", preco);
                 
-
                 idProduto = Convert.ToInt32(cmd.ExecuteScalar());
-
             }
             catch (Exception)
             {
@@ -275,7 +267,6 @@ namespace FUT_Mania.conexao.Produtos
 
             SqlConnection sqlConnection = new SqlConnection(conexao);
             DataTable pageExtrato = new DataTable();
-
 
             try
             {

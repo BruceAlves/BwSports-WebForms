@@ -19,21 +19,18 @@ namespace FUT_Mania
         public static string ValorProduto;
         public static string ProdutoVendido;
         protected void Page_Load(object sender, EventArgs e)
-        {
-          
+        {          
             CarregarGridView();
 
             ICliente clientes = new Cliente();      
             txtProdutoVendido.Text = SessaoProduto.NomeProduto;
             txtDataVenda.Text = DateTime.Now.Date.ToShortDateString();
-
-            
+          
             DPLClientes.DataSource = clientes.PreencherDropListCliente();
             DPLClientes.DataTextField = "Nome";
             DPLClientes.DataValueField = "ID";
             DPLClientes.DataBind();
-            txtProdutoVendido.Text = SessaoProduto.NomeProduto;
-            
+            txtProdutoVendido.Text = SessaoProduto.NomeProduto;          
         }
 
         void CarregarGridView()
@@ -57,33 +54,7 @@ namespace FUT_Mania
                 DgvDisponiveisVenda.Rows[0].Cells[0].Text = "Nenhum dado encontrado...!";
                 DgvDisponiveisVenda.Rows[0].Cells[0].HorizontalAlign = HorizontalAlign.Center;
             }
-        }
-
-
-        protected void btnFinalizarVenda_Click(object sender, EventArgs e)
-        {
-            int idCliente = Convert.ToInt32(DPLClientes.SelectedValue.ToString());
-
-            int qtdTotal = Convert.ToInt32(txtQtdG.Text + txtQtdM.Text + txtQtdP.Text);
-
-            IProdutos produtos = new Produtos();
-            produtos.InserirVenda(txtValorTotal.Text, txtDataVenda.Text, qtdTotal, SessaoProduto.IDproduto, idCliente, SessaoProduto.NomeProduto);
-
-            int quantidadeG = Convert.ToInt32(txtQtdG.Text);
-            int quantidadeM = Convert.ToInt32(txtQtdM.Text);
-            int quantidadeP = Convert.ToInt32(txtQtdP.Text);
-            produtos.EditarEstoque(SessaoProduto.IDestoque, quantidadeG, quantidadeM, quantidadeP);
-
-
-            txtDataVenda.Text = string.Empty;
-            txtProdutoVendido.Text = string.Empty;
-            txtQtdG.Text = string.Empty;
-            txtQtdM.Text = string.Empty;
-            txtQtdP.Text = string.Empty;
-            txtValorTotal.Text = string.Empty;
-
-            ClientScript.RegisterStartupScript(this.GetType(), "alert", "AlertSucesso();", true);
-        }
+        }    
 
         protected void DgvDisponiveisVenda_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -137,10 +108,9 @@ namespace FUT_Mania
             }
         }
 
-        
+
         protected void btnFinalizarVenda_Click1(object sender, EventArgs e)
         {
-
             int idCliente = Convert.ToInt32(DPLClientes.SelectedValue.ToString());
 
             int QtdG = Convert.ToInt32(txtQtdG.Text);
